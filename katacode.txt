@@ -1,0 +1,208 @@
+katas code 
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/Manan Bhateja/Desktop/kattas/clone_kata/.git/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git-katas/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata (master)
+$ ls
+git-katas/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata (master)
+$ cd git-katas/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas (master)
+$ ls
+3-way-merge/                  commit-on-wrong-branch/    rebase-branch/
+LICENSE.txt                   commit-on-wrong-branch-2/  rebase-exec/
+Overview.md                   configure-git/             rebase-interactive-autosquash/
+README.md                     detached-head/             reorder-the-history/
+SHELL-BASICS.md               docs/                      reset/
+advanced-rebase-interactive/  ff-merge/                  restore/
+alias/                        git-attributes/            reverted-merge/
+amend/                        git-tag/                   save-my-commit/
+bad-commit/                   ignore/                    squashing/
+basic-branching/              images/                    submodules/
+basic-cherry-pick/            investigation/             subtree/
+basic-cleaning/               lfs/                       test-all.sh*
+basic-commits/                master-based-workflow/     test.ps1
+basic-revert/                 merge-conflict/            test.sh*
+basic-staging/                merge-driver/              testzsh.sh*
+basic-stashing/               merge-mergesort/           utils/
+bisect/                       objects/
+change-author/                pre-push/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas (master)
+$ cd squashing/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing (master)
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Manan Bhateja/Desktop/kattas/clone_kata/git-katas/squashing/exercise/.git/
+[master (root-commit) 861b39f] initial file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 alsoafile.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master db942af] Add relevant fact
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 58c3f4e] Add more relevancy
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 944d604] most relevant!
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master baea396] add prime directive
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master cc85bb2] add the word!
+ 1 file changed, 1 insertion(+)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git log
+commit cc85bb20fe66b8e55222a3de9fdc15f97719f143 (HEAD -> master)
+Author: Manan Bhateja <manan.bhateja@zemosolabs.com>
+Date:   Thu Feb 9 17:16:19 2023 +0530
+
+    add the word!
+
+commit baea3963b9e9ab1bddf087b5127431be61194af5
+Author: Manan Bhateja <manan.bhateja@zemosolabs.com>
+Date:   Thu Feb 9 17:16:19 2023 +0530
+
+    add prime directive
+
+commit 944d604d12dbc5c85fb51d0285d559012485664e
+Author: Manan Bhateja <manan.bhateja@zemosolabs.com>
+Date:   Thu Feb 9 17:16:18 2023 +0530
+
+    most relevant!
+
+commit 58c3f4e0ec80a51b294e1a8607c72e13770362f3
+Author: Manan Bhateja <manan.bhateja@zemosolabs.com>
+Date:   Thu Feb 9 17:16:18 2023 +0530
+
+    Add more relevancy
+
+commit db942afe8caf63342ab8056ed05ec616adfed168
+Author: Manan Bhateja <manan.bhateja@zemosolabs.com>
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git log --oneline --graph
+* cc85bb2 (HEAD -> master) add the word!
+* baea396 add prime directive
+* 944d604 most relevant!
+* 58c3f4e Add more relevancy
+* db942af Add relevant fact
+* 861b39f initial file
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git rebase -i ^C
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git rebase -i  cc85bb2
+Successfully rebased and updated refs/heads/master.
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git rebase -i 861b39f
+[detached HEAD c8d2b8b] see further information
+ Date: Thu Feb 9 17:16:18 2023 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+Successfully rebased and updated refs/heads/master.
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git log --online
+fatal: unrecognized argument: --online
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git log --oneline
+c8d2b8b (HEAD -> master) see further information
+861b39f initial file
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ ls
+alsoafile.txt  file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git add .
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git commit --amend
+[master 6829e79] see further information
+ Date: Thu Feb 9 17:16:18 2023 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git log --oneline
+6829e79 (HEAD -> master) see further information
+861b39f initial file
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git reflog
+6829e79 (HEAD -> master) HEAD@{0}: commit (amend): see further information
+c8d2b8b HEAD@{1}: rebase (finish): returning to refs/heads/master
+c8d2b8b HEAD@{2}: rebase (squash): see further information
+4fbeb88 HEAD@{3}: rebase (squash): # This is a combination of 4 commits.
+b0f9df5 HEAD@{4}: rebase (squash): # This is a combination of 3 commits.
+1d1d6c6 HEAD@{5}: rebase (squash): # This is a combination of 2 commits.
+db942af HEAD@{6}: rebase (start): checkout 861b39f
+cc85bb2 HEAD@{7}: rebase (finish): returning to refs/heads/master
+cc85bb2 HEAD@{8}: rebase (start): checkout cc85bb2
+cc85bb2 HEAD@{9}: commit: add the word!
+baea396 HEAD@{10}: commit: add prime directive
+944d604 HEAD@{11}: commit: most relevant!
+58c3f4e HEAD@{12}: commit: Add more relevancy
+db942af HEAD@{13}: commit: Add relevant fact
+861b39f HEAD@{14}: commit (initial): initial file
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/squashing/exercise (master)
+$ git log --oneline
+6829e79 (HEAD -> master) see further information
+861b39f initial file
+
